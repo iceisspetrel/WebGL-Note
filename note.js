@@ -86,3 +86,6 @@ gl.bufferData(gl.ARRAY_BUFFER, Float32Array, gl.STATIC_DRAW);
  * @param offset   缓冲区偏移量。即从缓冲区何处开始存储数据。如果从开始位置存储offset = 0
  */
 gl.vertexAttribPointer = function(a_attr, size, type, normalize, stribe, offset){};
+
+
+//WebGL中如果顶点着色器和片元着色器中有类型和命名都相同的varying变量，顶点着色器中赋给变量值就会被直接传入到片元着色器
