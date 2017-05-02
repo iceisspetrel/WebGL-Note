@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script type="text/javascript" src="./lib/webgl-utils.js"></script>
+        <script type="text/javascript" src="./lib/webgl-debug.js"></script>
+        <script type="text/javascript" src="./lib/cuon-utils.js"></script>
+        <script type="text/javascript" src="WebGL_15_MatReview.js"></script>
+        <script type="text/plain" id="vertex_shader">
+            attribute vec4 a_Position;
+            uniform   mat4 u_Mat;
+            void main(){
+                gl_Position = u_Mat * a_Position;
+                gl_PointSize = 10.0;
+            }
+        </script>
+        <script type="text/plain" id="fragment_shader">
+            precision mediump float;
+            uniform vec4 u_Color;
+            void main(){
+                gl_FragColor.x = u_Color.x;
+                gl_FragColor.y = u_Color.y;
+                gl_FragColor.z = u_Color.z;
+                gl_FragColor.w = u_Color.w;
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="webgl" width="600" height="600"></canvas>
+        <script type="text/javascript">
+            window.onload = main;
+        </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script type="text/javascript" src="./lib/webgl-utils.js"></script>
+        <script type="text/javascript" src="./lib/webgl-debug.js"></script>
+        <script type="text/javascript" src="./lib/cuon-utils.js"></script>
+        <script type="text/javascript" src="WebGL_10_Rotate.js"></script>
+        <script type="text/plain" id="vertex-shader">
+            attribute vec4 a_Position;
+            uniform   vec4 u_translate;
+            void main(){
+                gl_Position  = a_Position + u_translate;
+                gl_PointSize = 10.0;
+            }
+        </script>
+        <script type="text/plain" id="fragment-shader">
+            void main(){
+                gl_FragColor = vec4(0.5, 0.5, 0.5, 1);
+            }
+        </script>
+    </head>
+    <body onload="main();">
+        <canvas width="600" height="600" id="webgl"></canvas>
+    </body>
+</html>

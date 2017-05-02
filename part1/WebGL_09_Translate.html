@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script type="text/javascript" src="./lib/webgl-utils.js"></script>
+        <script type="text/javascript" src="./lib/webgl-debug.js"></script>
+        <script type="text/javascript" src="./lib/cuon-utils.js"></script>
+        <script type="text/javascript" src="WebGL_09_Translate.js"></script>
+        <script type="text/plain" id="vertexShader">
+            attribute vec4  a_Position;
+            uniform   float u_PointSize;
+            uniform   vec4  u_Translate;
+            void main(){
+                gl_Position = a_Position + u_Translate;
+                gl_PointSize = u_PointSize;
+            }
+        </script>
+        <script type="text/plain" id="fragmentShader">
+            precision mediump float;
+            uniform vec4 u_FragColor;
+            void main(){
+                gl_FragColor = u_FragColor;
+            }
+        </script>
+    </head>
+    <body onload="main()">
+        <canvas width="600" height="600" id="webgl"></canvas>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <canvas width="600" height="600" id="canvas"></canvas>
+        <script type="text/javascript">
+            window.onload = function(){
+                var VERTEX_SHADER_SOURCE = [
+                    'void main(){',
+                        'gl_Position = vec4(0.0, 0.0, 0.0, 1.0)',
+                        'gl_PointSize = 10',
+                    '}'
+                ].join('\n'),
+                FRAGMENT_SHADER_SOURCE = [
+                    'void main(){',
+                        'gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0)',
+                    '}'
+                ].join('\n');
+                var canvas = document.getElementById('canvas'),
+                    gl     = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+
+
+
+            };
+        </script>
+    </body>
+</html>
